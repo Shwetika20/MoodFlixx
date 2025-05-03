@@ -155,6 +155,14 @@ button:active {
 .fade-in-delay {
   animation: fadeIn 1.2s ease-in;
 }
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }

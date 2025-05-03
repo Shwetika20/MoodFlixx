@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import { Circles } from 'react-loader-spinner';
 
 function App() {
   const [questionData, setQuestionData] = useState(null);
@@ -62,26 +63,20 @@ function App() {
   };
 
   const fetchMovieDescription = async (mood, genre) => {
-    try {
-      const response = await fetch('http://localhost:5000/get-movie-description', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ mood, genre }),
-      });
+  try {
+    const res = await fetch('http://localhost:5000/get-movie-description', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ mood, genre })
+    });
+    const data = await res.json();
+    setMovieDescription(data.description);
+    setMovieStory(data.recommendations);
+  } catch (error) {
+    console.error("Failed to fetch movie description:", error);
+  }
+};
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const data = await response.json();
-      setMovieDescription(data.description);
-    } catch (error) {
-      console.error("Failed to fetch movie description:", error);
-      alert("Failed to generate the movie description. Please try again.");
-    }
-  };
 
   const submitAnswer = async (answer) => {
     try {
@@ -103,14 +98,24 @@ function App() {
     }
   };
 
-  if (loading || !questionData) {
+    if (loading || !questionData) {
     return (
-      <div className="App">
+      <div className="App loading-container">
+        <Circles 
+          height="80" 
+          width="80" 
+          color="#4fa94d" 
+          ariaLabel="circles-loading"
+          wrapperStyle={{}} 
+          wrapperClass="" 
+          visible={true}
+        />
         <h2>Loading question...</h2>
-        <button onClick={startSession}>Start From Beginning</button>
+        <button onClick={startSession} className="restart-button">🔁 Start Over</button>
       </div>
     );
   }
+
 
   return (
     <div className="app-container">
