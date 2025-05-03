@@ -1,38 +1,173 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000;
+  color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-container {
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: auto;
+  background: #1a1a2e;
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1s ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #444;
+  padding-bottom: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.gradient-text {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mood-list {
+  list-style: none;
+  padding: 0;
+}
+
+.mood-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: #2e2e42;
+  margin-bottom: 0.75rem;
+  border-radius: 6px;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.mood-item:hover {
+  transform: scale(1.03);
+  background: #3a3a5c;
+}
+
+.movie-card {
+  background: #252540;
+  padding: 1.2rem;
+  margin-top: 1.5rem;
+  border-left: 4px solid #ff8a00;
+  border-radius: 10px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.movie-heading {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.movie-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.form-group {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.text-input {
+  padding: 12px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #111;
+  color: #fff;
+  width: 80%;
+  max-width: 400px;
+  border: 2px solid #888;
+  transition: all 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.text-input:focus,
+.fancy-input:focus {
+  outline: none;
+  border: 2px solid #ff8a00;
+  background-color: #1d1d2e;
+  box-shadow: 0 0 5px #ff8a00;
+}
+
+.submit-button,
+.option-button,
+.restart-button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.submit-button.glow-button {
+  background: #ff8a00;
+  color: #fff;
+  box-shadow: 0 0 12px #ff8a00;
+}
+
+.option-button {
+  background: #3e3e60;
+  margin: 0.5rem;
+  color: #fff;
+  min-width: 160px;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+  background: #5e5e8c;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.restart-button {
+  margin-top: 2rem;
+  background: transparent;
+  color: #ff8a00;
+}
+
+.neon-border {
+  border: 2px solid #ff8a00;
+  box-shadow: 0 0 10px #ff8a00;
+  animation: pulse 2s infinite;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-in;
+}
+
+.fade-in-delay {
+  animation: fadeIn 1.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px #ff8a00; }
+  50% { box-shadow: 0 0 20px #ff8a00; }
+  100% { box-shadow: 0 0 10px #ff8a00; }
 }
