@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const MoodResult = ({ moodResult, movieDescription, movieStory }) => {
+  // State to store the DeepSearch result
+  const [deepSearchResult, setDeepSearchResult] = useState(null);
+
   // Extract relevant mood information
   const { Happy, Sad, Angry, Calm, Anxious, Excited } = moodResult || {};
 
@@ -42,7 +45,7 @@ const MoodResult = ({ moodResult, movieDescription, movieStory }) => {
 
   const onDeepSearch = async (movie) => {
     try {
-      const response = await fetch('http://localhost:5000/api/deepsearch', {
+      const response = await fetch('http://localhost:5004/recommend', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -56,15 +59,19 @@ const MoodResult = ({ moodResult, movieDescription, movieStory }) => {
 
       const data = await response.json();
       if (response.ok) {
-        alert(`DeepSearch result: ${data.result || 'Success'}`);
+        console.log(data);
+        // Assuming `data.recommendations` is an array of movie objects
+        const recommendations = data.recommendations || [];
+        setDeepSearchResult(recommendations.length ? recommendations : 'No recommendations found');
       } else {
-        alert(`DeepSearch failed: ${data.message || 'Unknown error'}`);
+        setDeepSearchResult(data.message || 'Unknown error');
       }
     } catch (error) {
       console.error('DeepSearch error:', error);
-      alert('Error during DeepSearch.');
+      setDeepSearchResult('Error during DeepSearch.');
     }
-  };
+};
+
 
   // Helper function to render a mood bar
   const renderMoodBar = (mood, confidence) => (
@@ -134,6 +141,25 @@ const MoodResult = ({ moodResult, movieDescription, movieStory }) => {
           <p className="text-gray-300">No movie recommendations available.</p>
         )}
       </section>
+
+      <div className="flex flex-wrap justify-center gap-6 p-6">
+        {Array.isArray(deepSearchResult) ? (
+          deepSearchResult.map((recommendation, index) => (
+            <div
+              key={index}
+              className="bg-gray-900 text-white p-6 rounded-lg w-60 shadow-lg transition-all duration-300 transform hover:translate-y-2 hover:shadow-2xl cursor-pointer text-center"
+            >
+              <h3 className="text-lg font-semibold mb-4 hover:text-red-500">{recommendation.movie_name}</h3>
+              <p className="text-sm text-yellow-400 mb-4">{recommendation.genre}</p>
+              <p className="text-xs text-gray-400">{recommendation.overview}</p>
+            </div>
+          ))
+        ) : (
+          <p className="text-white">{deepSearchResult}</p>
+        )}
+      </div>
+
+
     </div>
   );
 };

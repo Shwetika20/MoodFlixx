@@ -19,7 +19,7 @@ const MAX_QUESTIONS = 5;
 const usedQuestions = new Set();
 
 async function getFirstOpenQuestion() {
-  const question = "How are you feeling right now in your own words?";
+  const question = "What kind of movie you want to watch?";
   history.push({ question, answer: "" });
   usedQuestions.add(question);
   return { question, type: "text" };
@@ -28,16 +28,24 @@ async function getFirstOpenQuestion() {
 async function getNextMCQQuestion() {
   const context = history.map((entry, idx) => `Q${idx + 1}: ${entry.question}\nA${idx + 1}: ${entry.answer}`).join('\n');
   const prompt = `
-You're a movie expert. Based on the following conversation history, generate a NEW,UNIQUE and SHORT multiple-choice question with SHORT options that helps assess the user's mood more deeply.
+You are a movie recommendation expert helping a user narrow down their movie preferences.
 
-DO NOT REPEAT any previously asked questions.
-Use this format only:
+Based on the following conversation history, generate ONE NEW and UNIQUE multiple-choice question that helps identify what kind of movie the user would enjoy.
+
+Guidelines:
+- Keep the question concise it should be somewaht short and optons.
+- Avoid repeating or rephrasing previously asked questions.
+- Focus on storytelling elements like plot types, themes, main characters, pacing, etc.
+- Each option should be distinct and insightful.
+- Do NOT include any explanation or extra text.
+- Return ONLY a valid JSON in the following format:
+
 {
   "question": "Your question here",
   "options": ["Option1", "Option2", "Option3", "Option4"]
 }
 
-Here are the previous questions:
+Previously asked questions:
 ${history.map((h, i) => `Q${i + 1}: ${h.question}`).join('\n')}
 
 Conversation history:
@@ -52,7 +60,6 @@ ${context}
     }
     const parsed = JSON.parse(text);
 
-    // Prevent repetition explicitly
     if (usedQuestions.has(parsed.question)) {
       throw new Error("Repeated question detected.");
     }
@@ -79,23 +86,15 @@ async function generateProbabilities() {
   const answersText = history.map((entry, i) => `Q${i + 1}: ${entry.question}\nA${i + 1}: ${entry.answer}`).join('\n');
 
   const prompt = `
-Based on the following Q&A, estimate two sets of probabilities (0-100%) for:
+You're a movie preference inference engine.
 
-1. Mood: ["Happy", "Sad", "Angry", "Calm", "Anxious", "Excited"]
-and
-2. Genre: ["Action", "Animation", "Comedy", "Crime", "Documentary", "Drama", "European", "Family", "Fantasy", "History", "Horror", "Music", "Reality", "Romance", "SciFi", "Sport", "Thriller", "War", "Western"]
+Given the user's answers to the following questions, analyze and return a JSON object with two sections:
+- "mood": a list of inferred emotional states or vibes the user may prefer in a movie (e.g., "uplifting", "dark", "suspenseful").
+- "genre": a list of likely genres the user would enjoy (e.g., "thriller", "comedy", "drama", "sci-fi").
 
-Respond ONLY in this format:
-{
-  "mood": {
-    "Happy": %, "Sad": %, ...
-  },
-  "genre": {
-    "Action": %, "Animation": %, ...
-  }
-}
+Ensure your response is purely valid JSON. Avoid any explanation.
 
-Data:
+User Q&A:
 ${answersText}
 `;
 
@@ -120,43 +119,34 @@ app.post('/get-movie-description', async (req, res) => {
   }
 
   const prompt = `
-  First line should give me Recommended mood and genre:
-  Second line should give me a story, Given the user's mood and genre preferences,
-  write a movie description that matches both the emotional tone and genre:
+You're a creative screenwriter and genre expert.
 
-  Mood:
-  ${JSON.stringify(mood, null, 2)}
+Based on the user's inferred mood and genre preferences below, do the following:
 
-  Genre:
-  ${JSON.stringify(genre, null, 2)}
+1. On the first line, print: Recommended Genre: <Your Recommendation>
+2. Then write a short and original movie description (3–5 lines) that fits both mood and genre.
+3. Avoid clichés and be specific with character roles, setting, or conflict.
 
-  Write a short movie description (4-5 lines) that aligns with the mood and genre.
-  `;
+Mood Preferences:
+${JSON.stringify(mood, null, 2)}
+
+Genre Preferences:
+${JSON.stringify(genre, null, 2)}
+`;
 
   try {
     const result = await model.generateContent(prompt);
     const plot = (await result.response).text().trim();
 
-    // Now send this plot to the /recommend endpoint
-    const recommendResponse = await axios.post('http://localhost:5002/recommend', {
-      plot: plot
-    });
-
+    const recommendResponse = await axios.post('http://localhost:5002/recommend', { plot });
     const recommendations = recommendResponse.data;
 
-    // Send both generated plot and recommendations back
-    res.json({
-      plot,
-      recommendations
-    });
+    res.json({ plot, recommendations });
   } catch (err) {
     console.error("Error during generation or recommendation:", err.message);
     res.status(500).json({ error: "Failed to generate movie description or get recommendations." });
   }
 });
-
-
-// Existing routes
 
 app.get('/next-question', async (req, res) => {
   if (currentQuestionCount >= MAX_QUESTIONS) {
@@ -185,7 +175,7 @@ app.post('/reset', (req, res) => {
   res.json({ status: "Session reset." });
 });
 
-const PORT = 5001;
+const PORT = 5003;
 app.listen(PORT, () => {
   console.log(`Mood app server running at http://localhost:${PORT}`);
 });

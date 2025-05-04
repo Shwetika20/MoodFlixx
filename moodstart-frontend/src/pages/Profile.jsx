@@ -78,50 +78,57 @@ const Profile = () => {
   }
 
   return (
-    <div className="max-w-3xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-lg text-black">
-      <NavBar />
+    <div className="min-h-screen bg-gradient-to-r from-indigo-800 via-purple-800 to-indigo-800 text-white flex justify-center items-center">
+      
+  <div className="max-w-3xl mx-auto mt-10 p-6 bg-white bg-opacity-70 backdrop-blur-lg rounded-xl shadow-lg text-black">
+  <NavBar />
 
-      <h1 className="text-3xl font-bold mb-4">Profile</h1>
+  <h1 className="text-3xl font-bold m-4">Profile</h1>
 
-      <div className="mb-6">
-        <p className="text-lg"><strong>Name:</strong> {user.name}</p>
-        <p className="text-lg"><strong>Email:</strong> {user.email}</p>
-      </div>
+  <div className="mb-6">
+    <p className="text-lg"><strong>Name:</strong> {user.name}</p>
+    <p className="text-lg"><strong>Email:</strong> {user.email}</p>
+  </div>
 
-      <h2 className="text-xl font-semibold mt-6 mb-2">Watch History</h2>
-      {user.moviesHistory.length === 0 ? (
-        <p>No movies watched yet.</p>
-      ) : (
-        <ul className="list-disc list-inside space-y-4">
-          {user.moviesHistory.map((entry) => (
-            <li key={entry._id} className="bg-gray-100 p-4 rounded-md shadow-sm">
-              <p><strong>Name:</strong> {entry.name}</p>
-              <p><strong>Genre:</strong> {entry.genre}</p>
-              <p><strong>Overview:</strong> {entry.overview}</p>
-              <p><strong>Watched At:</strong> {new Date(entry.watchedAt).toLocaleString()}</p>
-              <button
-                onClick={() => handleDelete(entry._id)}
-                className="mt-2 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition"
-              >
-                Delete
-              </button>
-            </li>
-          ))}
-        </ul>
-      )}
+  <h2 className="text-xl font-semibold mt-6 mb-2">Watch History</h2>
+  {user.moviesHistory.length === 0 ? (
+    <p>No movies watched yet.</p>
+  ) : (
+    <ul className="list-disc list-inside space-y-4">
+      {user.moviesHistory.map((entry) => (
+        <li key={entry._id} className="bg-gray-100 p-4 rounded-md shadow-sm">
+          <p><strong>Name:</strong> {entry.name}</p>
+          <p><strong>Genre:</strong> {entry.genre}</p>
+          <p><strong>Overview:</strong> {entry.overview}</p>
+          <p><strong>Watched At:</strong> {new Date(entry.watchedAt).toLocaleString()}</p>
+          <button
+            onClick={() => handleDelete(entry._id)}
+            className="mt-2 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition"
+          >
+            Delete
+          </button>
+        </li>
+      ))}
+    </ul>
+  )}
 
-      <div className="mt-8 flex space-x-4">
-        <button
-          onClick={() => {
-            localStorage.removeItem('authToken');
-            navigate('/login');
-          }}
-          className="px-6 py-3 bg-red-600 text-white rounded-full font-semibold shadow-md hover:bg-red-500 transition-all duration-300"
-        >
-          Log Out
-        </button>
-      </div>
-    </div>
+  <div className="mt-8 flex space-x-4">
+    <button
+      onClick={() => {
+        localStorage.removeItem('authToken');
+        navigate('/login');
+      }}
+      className="px-6 py-3 bg-red-600 text-white rounded-full font-semibold shadow-md hover:bg-red-500 transition-all duration-300"
+    >
+      Log Out
+    </button>
+  </div>
+</div>
+
+
+
+</div>
+
   );
 };
 

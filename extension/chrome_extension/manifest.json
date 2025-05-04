@@ -1,0 +1,12 @@
+{
+    "manifest_version": 3,
+    "name": "MoodFlixx Movie Recommender",
+    "version": "1.0",
+    "description": "Get movie recommendations based on your mood.",
+    "permissions": ["tabs", "storage"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    }
+  }
+  
