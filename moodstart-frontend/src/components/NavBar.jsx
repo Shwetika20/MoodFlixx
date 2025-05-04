@@ -6,7 +6,7 @@ const NavBar = () => {
   const location = useLocation();
 
   // Check login status
-  const isLoggedIn = !!localStorage.getItem('token'); // Replace 'token' with your actual key if different
+  const isLoggedIn = !!localStorage.getItem('authToken'); // Replace 'token' with your actual key if different
 
   return (
     <nav className="flex justify-between items-center px-8 py-6 bg-gradient-to-r from-[#1f1b38] to-[#302b63] text-white shadow-lg">
