@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import React from 'react';
 import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -39,9 +40,7 @@ const LandingPage = () => {
       </div>
 
       {/* Footer */}
-      <footer className="flex justify-center items-center py-6 text-sm bg-black bg-opacity-30 text-white">
-        <p>© 2025 MoodStart. All rights reserved.</p>
-      </footer>
+      <Footer/>
     </div>
   );
 };

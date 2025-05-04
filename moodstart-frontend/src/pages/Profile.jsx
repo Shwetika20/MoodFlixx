@@ -8,32 +8,61 @@ const Profile = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchProfile = async () => {
-      const token = localStorage.getItem('authToken');
-      try {
-        const res = await fetch('http://localhost:5000/api/user/profile', {
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-          },
-        });
+  const fetchProfile = async () => {
+    const token = localStorage.getItem('authToken');
+    try {
+      const res = await fetch('http://localhost:5000/api/user/profile', {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
-        const data = await res.json();
-        if (res.ok) {
-          setUser(data);
-        } else {
-          setError(data.message || 'An error occurred while fetching the profile.');
-        }
-      } catch (err) {
-        setError('Error fetching profile: ' + err.message);
-      } finally {
-        setLoading(false);
+      const data = await res.json();
+      if (res.ok) {
+        setUser(data);
+      } else {
+        setError(data.message || 'An error occurred while fetching the profile.');
       }
-    };
+    } catch (err) {
+      setError('Error fetching profile: ' + err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchProfile();
   }, []);
+
+  const handleDelete = async (movieId) => {
+  const token = localStorage.getItem('authToken');
+  try {
+    const res = await fetch(`http://localhost:5000/api/user/history/${movieId}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    const data = await res.json();
+    if (res.ok) {
+      // Optimistically update UI
+      setUser((prevUser) => ({
+        ...prevUser,
+        moviesHistory: prevUser.moviesHistory.filter((entry) => entry._id !== movieId),
+      }));
+    } else {
+      setError(data.message || 'Failed to delete movie from history.');
+    }
+  } catch (err) {
+  console.error('🔥 Error in DELETE /history/:id:', err); // 🔥 Logs full error stack
+  res.status(500).json({ message: 'Server error while deleting movie.' });
+
+  }
+};
+
 
   if (loading) {
     return (
@@ -64,19 +93,24 @@ const Profile = () => {
         <p>No movies watched yet.</p>
       ) : (
         <ul className="list-disc list-inside space-y-4">
-          {user.moviesHistory.map((entry, index) => (
-            <li key={index} className="bg-gray-100 p-4 rounded-md shadow-sm">
+          {user.moviesHistory.map((entry) => (
+            <li key={entry._id} className="bg-gray-100 p-4 rounded-md shadow-sm">
               <p><strong>Name:</strong> {entry.name}</p>
               <p><strong>Genre:</strong> {entry.genre}</p>
               <p><strong>Overview:</strong> {entry.overview}</p>
               <p><strong>Watched At:</strong> {new Date(entry.watchedAt).toLocaleString()}</p>
+              <button
+                onClick={() => handleDelete(entry._id)}
+                className="mt-2 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition"
+              >
+                Delete
+              </button>
             </li>
           ))}
         </ul>
       )}
 
       <div className="mt-8 flex space-x-4">
-
         <button
           onClick={() => {
             localStorage.removeItem('authToken');

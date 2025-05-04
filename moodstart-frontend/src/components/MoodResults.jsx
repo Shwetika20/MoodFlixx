@@ -124,7 +124,7 @@ const MoodResult = ({ moodResult, movieDescription, movieStory }) => {
                     onClick={() => onSaveToHistory(movie)}
                     className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition cursor-pointer"
                   >
-                    💾 Save to History
+                    💾 Watch
                   </button>
                 </div>
               </div>

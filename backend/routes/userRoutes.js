@@ -26,5 +26,37 @@ userRouter.post('/save-movie',userAuth, async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 });
+// DELETE /api/user/history/:id
+userRouter.delete('/history/:id', userAuth, async (req, res) => {
+  const userId = req.user.id;
+  const movieId = req.params.id;
+
+  try {
+    const user = await userModel.findById(userId);
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found.' });
+    }
+
+    // Optional: check if movie exists in history
+    const exists = user.moviesHistory.some(
+      (movie) => movie._id.toString() === movieId
+    );
+    if (!exists) {
+      return res.status(404).json({ message: 'Movie not found in history.' });
+    }
+
+    user.moviesHistory = user.moviesHistory.filter(
+      (movie) => movie._id.toString() !== movieId
+    );
+    await user.save();
+
+    res.json({ message: 'Movie deleted from history.' });
+  } catch (err) {
+    console.error('Error deleting movie from history:', err); // log the real error
+    res.status(500).json({ message: 'Server error while deleting movie.' });
+  }
+});
+
 
 export default userRouter;
