@@ -72,22 +72,7 @@ MoodFlixx is an innovative AI-powered movie recommendation system that personali
 
 ### Chrome Extension Installation
 
-1. Navigate to the extension directory:
-   ```bash
-   cd extension
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Build the extension:
-   ```bash
-   npm run build
-   ```
-
-4. Load the extension in Chrome:
+1. Load the extension in Chrome:
    - Open Chrome and navigate to `chrome://extensions/`
    - Enable "Developer mode"
    - Click "Load unpacked" and select the `extension/dist` directory
