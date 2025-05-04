@@ -1,0 +1,601 @@
+username,genre,movie_name,index,liked,combined_text,cluster,subgenre,genre_clean
+user1,history,shudra the rising,3181,True,Shudra the Rising history,72,General,history
+user1,history,the finest hours,577,False,The Finest Hours history,-1,General,history
+user1,drama,miss shetty mr polishetty,1030,False,Miss Shetty Mr Polishetty drama,-1,Romantic Drama,drama
+user1,drama,bhaiaji superhit,2985,False,Bhaiaji Superhit drama,100,Romantic Drama,drama
+user1,mystery,ghajini,1123,False,Ghajini mystery,36,Mystery Thriller,mystery
+user1,mystery,ittefaq,1193,False,Ittefaq mystery,36,Mystery Thriller,mystery
+user2,biography,83,1166,False,83 biography,79,Biographical Drama,biography
+user2,biography,mastram,1950,False,Mastram biography,96,Biographical Drama,biography
+user2,thriller,mission: impossible iii,870,False,Mission: Impossible III thriller,-1,Action Thriller,thriller
+user2,thriller,colonia,555,True,Colonia thriller,67,Action Thriller,thriller
+user2,mystery,eklavya,2784,False,Eklavya mystery,36,Mystery Thriller,mystery
+user2,mystery,sarzameen,2147,False,Sarzameen mystery,36,Mystery Thriller,mystery
+user3,musical,dil ka kya kasoor,2266,True,Dil Ka Kya Kasoor musical,37,General,musical
+user3,musical,les misérables,246,False,Les Misérables musical,-1,General,musical
+user3,sci-fi,the wolverine,389,False,The Wolverine sci-fi,83,Sci-Fi Action,sci-fi
+user3,sci-fi,godzilla,529,False,Godzilla sci-fi,83,Sci-Fi Action,sci-fi
+user3,war,mughal-e-azam,1742,True,Mughal-E-Azam war,18,War Drama,war
+user3,war,the ghazi attack,1884,True,The Ghazi Attack war,18,War Drama,war
+user4,western,the magnificent seven,39,False,The Magnificent Seven western,8,General,western
+user4,western,brimstone,140,False,Brimstone western,-1,General,western
+user4,horror,tum mere ho,2135,False,Tum Mere Ho horror,50,Horror Comedy,horror
+user4,horror,phone bhoot,1670,True,Phone Bhoot horror,44,Horror Comedy,horror
+user4,musical,pardes,1663,False,Pardes musical,47,General,musical
+user4,musical,kal ho naa ho,1086,False,Kal Ho Naa Ho musical,37,General,musical
+user5,drama,all ladies do it,1324,True,All Ladies Do It drama,111,Romantic Drama,drama
+user5,drama,bastille day,616,True,Bastille Day drama,-1,Romantic Drama,drama
+user5,adventure,max,985,False,Max adventure,95,Fantasy Adventure,adventure
+user5,adventure,the hobbit: an unexpected journey,272,False,The Hobbit: An Unexpected Journey adventure,78,Fantasy Adventure,adventure
+user5,sci-fi,g.i. joe: retaliation,879,True,G.I. Joe: Retaliation sci-fi,83,Sci-Fi Action,sci-fi
+user5,sci-fi,the avengers,77,True,The Avengers sci-fi,83,Sci-Fi Action,sci-fi
+user6,thriller,baaghi 3,1352,False,Baaghi 3 thriller,68,Action Thriller,thriller
+user6,thriller,aalavandhan,2276,False,Aalavandhan thriller,68,Action Thriller,thriller
+user6,western,the lone ranger,970,False,The Lone Ranger western,0,General,western
+user6,western,brimstone,140,True,Brimstone western,8,General,western
+user6,war,mughal-e-azam,1742,False,Mughal-E-Azam war,18,War Drama,war
+user6,war,kshatriya,2689,True,Kshatriya war,16,War Drama,war
+user7,mystery,neeyat,1017,True,Neeyat mystery,36,Mystery Thriller,mystery
+user7,mystery,fever,2905,False,Fever mystery,36,Mystery Thriller,mystery
+user7,crime,jolly llb 2,1929,True,Jolly LLB 2 crime,3,Crime Drama,crime
+user7,crime,gardish,2618,False,Gardish crime,3,Crime Drama,crime
+user7,romance,khaidi no. 150,2051,False,Khaidi No. 150 romance,23,Romantic Comedy,romance
+user7,romance,lamhe,2532,True,Lamhe romance,23,Romantic Comedy,romance
+user8,family,diary of a wimpy kid: rodrick rules,869,True,Diary of a Wimpy Kid: Rodrick Rules family,29,Family Fantasy,family
+user8,family,stardust,347,True,Stardust family,29,Family Fantasy,family
+user8,drama,rajnigandha,2152,False,Rajnigandha drama,101,Romantic Drama,drama
+user8,drama,lomad,2580,True,Lomad drama,111,Romantic Drama,drama
+user8,fantasy,the curious case of benjamin button,426,False,The Curious Case of Benjamin Button fantasy,-1,Fantasy Adventure,fantasy
+user8,fantasy,the twilight saga: eclipse,942,False,The Twilight Saga: Eclipse fantasy,77,Fantasy Adventure,fantasy
+user9,fantasy,man of steel,295,False,Man of Steel fantasy,-1,Fantasy Adventure,fantasy
+user9,fantasy,1408,805,True,1408 fantasy,-1,Fantasy Adventure,fantasy
+user9,,hera pheri 3,1409,False,Hera Pheri 3 ,45,General,
+user9,,ui,1597,True,UI ,-1,General,
+user9,crime,need for speed,536,False,Need for Speed crime,3,Crime Drama,crime
+user9,crime,a walk among the tombstones,799,False,A Walk Among the Tombstones crime,3,Crime Drama,crime
+user10,sci-fi,2,1283,False,2 sci-fi,83,Sci-Fi Action,sci-fi
+user10,sci-fi,ayalaan,2492,True,Ayalaan sci-fi,83,Sci-Fi Action,sci-fi
+user10,sci-fi,victor frankenstein,327,True,Victor Frankenstein sci-fi,83,Sci-Fi Action,sci-fi
+user10,sci-fi,resident evil: retribution,691,False,Resident Evil: Retribution sci-fi,81,Sci-Fi Action,sci-fi
+user10,history,hidden figures,12,False,Hidden Figures history,-1,General,history
+user10,history,viking,523,False,Viking history,58,General,history
+user11,sport,mukkabaaz,1600,False,Mukkabaaz sport,14,General,sport
+user11,sport,toolsidas junior,1658,True,Toolsidas Junior sport,-1,General,sport
+user11,crime,undertrial,2901,True,Undertrial crime,3,Crime Drama,crime
+user11,crime,ab tak chhappan,2191,True,Ab Tak Chhappan crime,3,Crime Drama,crime
+user11,drama,manto,1511,True,Manto drama,111,Romantic Drama,drama
+user11,drama,dacait,2280,False,Dacait drama,111,Romantic Drama,drama
+user12,adventure,silence,56,False,Silence adventure,95,Fantasy Adventure,adventure
+user12,adventure,shin gojira,881,False,Shin Gojira adventure,93,Fantasy Adventure,adventure
+user12,crime,the place beyond the pines,136,False,The Place Beyond the Pines crime,3,Crime Drama,crime
+user12,crime,haddi,1015,True,Haddi crime,3,Crime Drama,crime
+user12,horror,before i wake,336,True,Before I Wake horror,44,Horror Comedy,horror
+user12,horror,morgan,194,True,Morgan horror,44,Horror Comedy,horror
+user13,mystery,arrival,20,False,Arrival mystery,36,Mystery Thriller,mystery
+user13,mystery,spectral,543,False,Spectral mystery,36,Mystery Thriller,mystery
+user13,comedy,dabangg 2,1679,False,Dabangg 2 comedy,80,Romantic Comedy,comedy
+user13,comedy,r... rajkumar,2845,True,R... Rajkumar comedy,102,Romantic Comedy,comedy
+user13,adventure,dhoomam,2875,True,Dhoomam adventure,107,Fantasy Adventure,adventure
+user13,adventure,shikari: the hunter,3167,True,Shikari: The Hunter adventure,108,Fantasy Adventure,adventure
+user14,adventure,skyfall,271,True,Skyfall adventure,95,Fantasy Adventure,adventure
+user14,adventure,the lego movie,385,False,The Lego Movie adventure,95,Fantasy Adventure,adventure
+user14,history,spotlight,193,True,Spotlight history,21,General,history
+user14,history,zero dark thirty,407,True,Zero Dark Thirty history,-1,General,history
+user14,music,abcd (any body can dance),2915,True,ABCD (Any Body Can Dance) music,48,Music Drama,music
+user14,music,aashiqui 3,2781,True,Aashiqui 3 music,41,Music Drama,music
+user15,action,mere jeevan saathi,2050,False,Mere Jeevan Saathi action,84,Action Comedy,action
+user15,action,return of hanuman,2701,True,Return of Hanuman action,35,Action Comedy,action
+user15,musical,amrapali,2728,False,Amrapali musical,47,General,musical
+user15,musical,les misérables,246,True,Les Misérables musical,-1,General,musical
+user15,horror,kaali khuhi,1932,True,Kaali Khuhi horror,61,Horror Comedy,horror
+user15,horror,suryavanshi,2002,False,Suryavanshi horror,61,Horror Comedy,horror
+user16,thriller,tall men,648,True,Tall Men thriller,59,Action Thriller,thriller
+user16,thriller,piranha 3d,889,True,Piranha 3D thriller,67,Action Thriller,thriller
+user16,action,hot fuzz,160,False,Hot Fuzz action,86,Action Comedy,action
+user16,action,the bourne legacy,530,False,The Bourne Legacy action,82,Action Comedy,action
+user16,sport,breakaway,1741,False,Breakaway sport,-1,General,sport
+user16,sport,jersey,1264,False,Jersey sport,30,General,sport
+user17,adventure,eiga doraemon: nobita no getsumen tansaki,2747,False,Eiga Doraemon: Nobita no getsumen tansaki adventure,107,Fantasy Adventure,adventure
+user17,adventure,ramayana: the epic,2384,True,Ramayana: The Epic adventure,-1,Fantasy Adventure,adventure
+user17,war,incendies,714,True,Incendies war,32,War Drama,war
+user17,war,fury,241,False,Fury war,20,War Drama,war
+user17,romance,no strings attached,796,True,No Strings Attached romance,23,Romantic Comedy,romance
+user17,romance,maudie,840,False,Maudie romance,23,Romantic Comedy,romance
+user18,action,prem,2447,False,Prem action,86,Action Comedy,action
+user18,action,ghost rider,586,True,Ghost Rider action,-1,Action Comedy,action
+user18,family,raksha bandhan,1282,True,Raksha Bandhan family,29,Family Fantasy,family
+user18,family,geet gaata chal,3185,True,Geet Gaata Chal family,29,Family Fantasy,family
+user18,music,qala,1159,True,Qala music,41,Music Drama,music
+user18,music,rock on!!,1744,True,Rock On!! music,48,Rock Musical,music
+user19,drama,ajanabee,2795,False,Ajanabee drama,114,Romantic Drama,drama
+user19,drama,looper,342,True,Looper drama,-1,Romantic Drama,drama
+user19,crime,bombay velvet,1521,False,Bombay Velvet crime,3,Crime Drama,crime
+user19,crime,shiva,2591,False,Shiva crime,3,Crime Drama,crime
+user19,family,makdee,2310,False,Makdee family,29,Family Fantasy,family
+user19,family,parichay,2626,False,Parichay family,29,Family Fantasy,family
+user20,war,tubelight,1386,False,Tubelight war,-1,War Drama,war
+user20,war,chittagong,2654,True,Chittagong war,19,War Drama,war
+user20,sci-fi,krrish 3,1188,True,Krrish 3 sci-fi,91,Sci-Fi Action,sci-fi
+user20,sci-fi,cargo,2590,True,Cargo sci-fi,75,Sci-Fi Action,sci-fi
+user20,adventure,jagga jasoos,1405,False,Jagga Jasoos adventure,93,Fantasy Adventure,adventure
+user20,adventure,drona,2333,False,Drona adventure,95,Fantasy Adventure,adventure
+user21,drama,chhoti chhoti baatein,2730,False,Chhoti Chhoti Baatein drama,65,Romantic Drama,drama
+user21,drama,victor frankenstein,327,True,Victor Frankenstein drama,-1,Romantic Drama,drama
+user21,family,nine lives,1000,False,Nine Lives family,29,Family Fantasy,family
+user21,family,the karate kid,725,True,The Karate Kid family,29,Family Fantasy,family
+user21,history,spotlight,193,False,Spotlight history,21,General,history
+user21,history,the promise,71,True,The Promise history,57,General,history
+user22,history,raag desh,2907,False,Raag Desh history,51,General,history
+user22,history,ajmer 92,2106,False,Ajmer 92 history,57,General,history
+user22,biography,mary kom,1860,False,Mary Kom biography,63,Biographical Drama,biography
+user22,biography,daddy,1731,True,Daddy biography,96,Biographical Drama,biography
+user22,sci-fi,moon,599,False,Moon sci-fi,83,Sci-Fi Action,sci-fi
+user22,sci-fi,the prestige,65,True,The Prestige sci-fi,83,Sci-Fi Action,sci-fi
+user23,history,lída baarová,755,False,Lída Baarová history,49,General,history
+user23,history,viking,523,True,Viking history,58,General,history
+user23,sport,creed,378,True,Creed sport,30,General,sport
+user23,sport,concussion,897,False,Concussion sport,5,General,sport
+user23,family,kuselan,2680,True,Kuselan family,29,Family Fantasy,family
+user23,family,bemisal,2551,True,Bemisal family,29,Family Fantasy,family
+user24,comedy,touch chesi chudu,2858,False,Touch Chesi Chudu comedy,69,Romantic Comedy,comedy
+user24,comedy,go goa gone 2,3169,True,Go Goa Gone 2 comedy,89,Romantic Comedy,comedy
+user24,sport,point break,494,True,Point Break sport,31,General,sport
+user24,sport,tracktown,338,True,Tracktown sport,30,General,sport
+user24,thriller,quantum of solace,771,False,Quantum of Solace thriller,-1,Action Thriller,thriller
+user24,thriller,21,851,False,21 thriller,59,Action Thriller,thriller
+user25,horror,dybbuk: the curse is real,2300,True,Dybbuk: The Curse Is Real horror,54,Horror Comedy,horror
+user25,horror,purana mandir,2342,False,Purana Mandir horror,61,Horror Comedy,horror
+user25,drama,dark places,977,False,Dark Places drama,70,Romantic Drama,drama
+user25,drama,city of tiny lights,506,False,City of Tiny Lights drama,70,Romantic Drama,drama
+user25,sci-fi,viral,645,True,Viral sci-fi,83,Sci-Fi Action,sci-fi
+user25,sci-fi,i am number four,455,True,I Am Number Four sci-fi,83,Sci-Fi Action,sci-fi
+user26,horror,green room,329,True,Green Room horror,44,Horror Comedy,horror
+user26,horror,the neon demon,117,False,The Neon Demon horror,44,Horror Comedy,horror
+user26,sport,chandu champion,1317,False,Chandu Champion sport,12,General,sport
+user26,sport,m.s. dhoni: the untold story,1321,True,M.S. Dhoni: The Untold Story sport,15,General,sport
+user26,adventure,ted 2,668,True,Ted 2 adventure,95,Fantasy Adventure,adventure
+user26,adventure,captain america: civil war,36,True,Captain America: Civil War adventure,95,Fantasy Adventure,adventure
+user27,comedy,all the best: fun begins,1631,True,All the Best: Fun Begins comedy,90,Romantic Comedy,comedy
+user27,comedy,bharat,1461,False,Bharat comedy,102,Romantic Comedy,comedy
+user27,music,daag: a poem of love,2172,True,Daag: A Poem of Love music,28,Music Drama,music
+user27,music,aaja nachle,3018,True,Aaja Nachle music,41,Music Drama,music
+user27,action,mere jeevan saathi,2050,True,Mere Jeevan Saathi action,84,Action Comedy,action
+user27,action,kochadaiiyaan,2113,False,Kochadaiiyaan action,85,Action Comedy,action
+user28,mystery,chup,1075,True,Chup mystery,36,Mystery Thriller,mystery
+user28,mystery,irada,2428,True,Irada mystery,36,Mystery Thriller,mystery
+user28,sci-fi,weapon,2891,False,Weapon sci-fi,83,Sci-Fi Action,sci-fi
+user28,sci-fi,action replayy,1831,False,Action Replayy sci-fi,81,Sci-Fi Action,sci-fi
+user28,horror,stree 2,2673,True,Stree 2 horror,44,Horror Comedy,horror
+user28,horror,u turn,1240,True,U Turn horror,44,Horror Comedy,horror
+user29,war,inglourious basterds,78,False,Inglourious Basterds war,33,War Drama,war
+user29,war,billy lynn's long halftime walk,187,False,Billy Lynn's Long Halftime Walk war,10,War Drama,war
+user29,horror,shaapit: the cursed,2558,False,Shaapit: The Cursed horror,54,Horror Comedy,horror
+user29,horror,suryavanshi,2002,True,Suryavanshi horror,61,Horror Comedy,horror
+user29,musical,yeh jawaani hai deewani,1095,True,Yeh Jawaani Hai Deewani musical,34,General,musical
+user29,musical,ijaazat,2289,True,Ijaazat musical,40,General,musical
+user30,biography,main aur charles,1891,True,Main Aur Charles biography,-1,Biographical Drama,biography
+user30,biography,daddy,1731,False,Daddy biography,96,Biographical Drama,biography
+user30,war,billy lynn's long halftime walk,187,True,Billy Lynn's Long Halftime Walk war,11,War Drama,war
+user30,war,fury,241,False,Fury war,20,War Drama,war
+user30,romance,maine dil tujhko diya,2227,True,Maine Dil Tujhko Diya romance,23,Romantic Comedy,romance
+user30,romance,karma strikes,2688,True,Karma Strikes romance,23,Romantic Comedy,romance
+user31,western,true grit,744,False,True Grit western,0,General,western
+user31,western,a million ways to die in the west,746,False,A Million Ways to Die in the West western,4,General,western
+user31,war,children of war,3072,True,Children of War war,20,War Drama,war
+user31,war,tubelight,1386,True,Tubelight war,7,War Drama,war
+user31,,spirit,2138,True,Spirit ,104,General,
+user31,,hera pheri 3,1409,True,Hera Pheri 3 ,45,General,
+user32,mystery,wajah tum ho,1133,False,Wajah Tum Ho mystery,36,Mystery Thriller,mystery
+user32,mystery,hotel,2038,True,Hotel mystery,36,Mystery Thriller,mystery
+user32,animation,despicable me 2,798,True,Despicable Me 2 animation,74,Animated Comedy,animation
+user32,animation,chhota bheem aur krishna: mayanagari,2118,True,Chhota Bheem aur Krishna: Mayanagari animation,73,Animated Comedy,animation
+user32,action,suraj,2369,False,Suraj action,84,Action Comedy,action
+user32,action,laawaris,2279,True,Laawaris action,85,Action Comedy,action
+user33,romance,sex and the city,894,False,Sex and the City romance,23,Romantic Comedy,romance
+user33,romance,love & other drugs,631,False,Love & Other Drugs romance,23,Romantic Comedy,romance
+user33,family,17 again,923,False,17 Again family,29,Family Fantasy,family
+user33,family,miss peregrine's home for peculiar children,121,False,Miss Peregrine's Home for Peculiar Children family,29,Family Fantasy,family
+user33,fantasy,underworld awakening,622,True,Underworld Awakening fantasy,88,Fantasy Adventure,fantasy
+user33,fantasy,the mummy: tomb of the dragon emperor,740,True,The Mummy: Tomb of the Dragon Emperor fantasy,78,Fantasy Adventure,fantasy
+user34,thriller,the place beyond the pines,136,True,The Place Beyond the Pines thriller,53,Action Thriller,thriller
+user34,thriller,ocean's thirteen,908,True,Ocean's Thirteen thriller,68,Action Thriller,thriller
+user34,drama,uunchai,1247,False,Uunchai drama,111,Romantic Drama,drama
+user34,drama,himmat,2986,False,Himmat drama,111,Romantic Drama,drama
+user34,mystery,gaslight,1050,False,Gaslight mystery,7,Mystery Thriller,mystery
+user34,mystery,bees saal baad,2843,False,Bees Saal Baad mystery,36,Mystery Thriller,mystery
+user35,music,aashiqui 3,2781,True,Aashiqui 3 music,41,Music Drama,music
+user35,music,mere jeevan saathi,2112,True,Mere Jeevan Saathi music,34,Music Drama,music
+user35,sport,bleed for this,575,False,Bleed for This sport,25,General,sport
+user35,sport,queen of katwe,975,False,Queen of Katwe sport,12,General,sport
+user35,adventure,bahubali: the beginning,27,False,Bahubali: The Beginning adventure,106,Fantasy Adventure,adventure
+user35,adventure,the a-team,729,True,The A-Team adventure,95,Fantasy Adventure,adventure
+user36,comedy,zamaana deewana,2669,False,Zamaana Deewana comedy,-1,Romantic Comedy,comedy
+user36,comedy,mumbai express,2942,False,Mumbai Express comedy,-1,Romantic Comedy,comedy
+user36,biography,72 hours: martyr who never died,2755,True,72 Hours: Martyr Who Never Died biography,79,Biographical Drama,biography
+user36,biography,shershaah,1157,False,Shershaah biography,52,Biographical Drama,biography
+user36,thriller,the thinning,445,False,The Thinning thriller,59,Action Thriller,thriller
+user36,thriller,fifty shades of grey,64,True,Fifty Shades of Grey thriller,59,Action Thriller,thriller
+user37,horror,nache nagin gali gali,2174,False,Nache Nagin Gali Gali horror,50,Horror Comedy,horror
+user37,horror,sinister,563,True,Sinister horror,44,Horror Comedy,horror
+user37,romance,yeh hai jalwa,2307,False,Yeh Hai Jalwa romance,23,Romantic Comedy,romance
+user37,romance,kareeb,2866,False,Kareeb romance,23,Romantic Comedy,romance
+user37,biography,major,1318,True,Major biography,97,Biographical Drama,biography
+user37,biography,khufiya,1028,False,Khufiya biography,-1,Biographical Drama,biography
+user38,western,true grit,744,False,True Grit western,0,General,western
+user38,western,the ridiculous 6,643,False,The Ridiculous 6 western,9,General,western
+user38,war,billy lynn's long halftime walk,187,False,Billy Lynn's Long Halftime Walk war,11,War Drama,war
+user38,war,fury,241,True,Fury war,20,War Drama,war
+user38,fantasy,thank god,1518,False,Thank God fantasy,110,Fantasy Adventure,fantasy
+user38,fantasy,cargo,2590,True,Cargo fantasy,76,Fantasy Adventure,fantasy
+user39,biography,12 years a slave,112,False,12 Years a Slave biography,-1,Biographical Drama,biography
+user39,biography,argo,475,False,Argo biography,51,Biographical Drama,biography
+user39,animation,rio,884,True,Rio animation,74,Animated Comedy,animation
+user39,animation,monsters university,413,False,Monsters University animation,74,Animated Comedy,animation
+user39,,bedhadak,2119,False,Bedhadak ,99,General,
+user39,,khichdi 2,2596,False,Khichdi 2 ,92,General,
+user40,horror,the black room,402,True,The Black Room horror,44,Horror Comedy,horror
+user40,horror,the void,98,True,The Void horror,44,Horror Comedy,horror
+user40,sci-fi,krrish 4,1432,True,Krrish 4 sci-fi,92,Sci-Fi Action,sci-fi
+user40,sci-fi,pk,1038,True,PK sci-fi,83,Sci-Fi Action,sci-fi
+user40,adventure,agent vinod,1569,False,Agent Vinod adventure,95,Fantasy Adventure,adventure
+user40,adventure,commando,1757,False,Commando adventure,95,Fantasy Adventure,adventure
+user41,music,la la land,7,False,La La Land music,42,Music Drama,music
+user41,music,august rush,761,True,August Rush music,55,Music Drama,music
+user41,horror,roohi,1868,False,Roohi horror,60,Horror Comedy,horror
+user41,horror,red rose,2933,False,Red Rose horror,44,Horror Comedy,horror
+user41,,spirit,2138,True,Spirit ,105,General,
+user41,,awara pagal deewana 2,2129,False,Awara Pagal Deewana 2 ,45,General,
+user42,history,the delhi files,1928,False,The Delhi Files history,22,General,history
+user42,history,mission mangal,1718,False,Mission Mangal history,72,General,history
+user42,sport,chandu champion,1317,True,Chandu Champion sport,12,General,sport
+user42,sport,jersey,1538,True,Jersey sport,30,General,sport
+user42,horror,the purge,765,True,The Purge horror,44,Horror Comedy,horror
+user42,horror,srpski film,429,False,Srpski film horror,61,Horror Comedy,horror
+user43,sport,bleed for this,575,False,Bleed for This sport,25,General,sport
+user43,sport,42,850,False,42 sport,24,General,sport
+user43,sport,chakda xpress,1550,False,Chakda Xpress sport,12,General,sport
+user43,sport,bhaag milkha bhaag,1323,True,Bhaag Milkha Bhaag sport,14,General,sport
+user43,fantasy,cargo,2590,False,Cargo fantasy,76,Fantasy Adventure,fantasy
+user43,fantasy,sakthi,2666,True,Sakthi fantasy,99,Fantasy Adventure,fantasy
+user44,animation,sausage party,41,True,Sausage Party animation,74,Animated Comedy,animation
+user44,animation,ice age: collision course,297,False,Ice Age: Collision Course animation,74,Animated Comedy,animation
+user44,crime,shlok - the desi sherlock,3149,False,Shlok - The Desi Sherlock crime,3,Crime Drama,crime
+user44,crime,jannat: in search of heaven...,2398,True,Jannat: In Search of Heaven... crime,3,Crime Drama,crime
+user44,western,django unchained,145,False,Django Unchained western,1,General,western
+user44,western,true grit,744,True,True Grit western,0,General,western
+user45,musical,across the universe,983,False,Across the Universe musical,47,General,musical
+user45,musical,taxi driver,3193,False,Taxi Driver musical,46,General,musical
+user45,mystery,the conjuring,255,False,The Conjuring mystery,36,Mystery Thriller,mystery
+user45,mystery,the 9th life of louis drax,865,False,The 9th Life of Louis Drax mystery,36,Mystery Thriller,mystery
+user45,sport,anek,1380,False,Anek sport,-1,General,sport
+user45,sport,torbaaz,2499,False,Torbaaz sport,12,General,sport
+user46,history,there will be blood,300,True,There Will Be Blood history,-1,General,history
+user46,history,hacksaw ridge,17,False,Hacksaw Ridge history,58,General,history
+user46,biography,mary kom,1860,False,Mary Kom biography,63,Biographical Drama,biography
+user46,biography,omerta,1198,True,Omerta biography,49,Biographical Drama,biography
+user46,comedy,baar baar dekho,2036,False,Baar Baar Dekho comedy,69,Romantic Comedy,comedy
+user46,comedy,karwaan,1205,True,Karwaan comedy,90,Romantic Comedy,comedy
+user47,mystery,unknown,781,False,Unknown mystery,36,Mystery Thriller,mystery
+user47,mystery,secret in their eyes,996,True,Secret in Their Eyes mystery,36,Mystery Thriller,mystery
+user47,music,rock on!!,1744,True,Rock On!! music,48,Rock Musical,music
+user47,music,kabhi haan kabhi naa,1286,False,Kabhi Haan Kabhi Naa music,37,Music Drama,music
+user47,action,kochadaiiyaan,2113,False,Kochadaiiyaan action,85,Action Comedy,action
+user47,action,ramayana: the epic,2384,True,Ramayana: The Epic action,39,Action Comedy,action
+user48,fantasy,about time,360,False,About Time fantasy,109,Fantasy Adventure,fantasy
+user48,fantasy,immortals,588,False,Immortals fantasy,110,Fantasy Adventure,fantasy
+user48,adventure,krrish,1304,False,Krrish adventure,-1,Fantasy Adventure,adventure
+user48,adventure,roadside romeo,2097,True,Roadside Romeo adventure,95,Fantasy Adventure,adventure
+user48,,three of us,1546,True,Three of Us ,105,General,
+user48,,spirit,2138,True,Spirit ,104,General,
+user49,romance,whisky galore,394,False,Whisky Galore romance,23,Romantic Comedy,romance
+user49,romance,a good year,531,False,A Good Year romance,23,Romantic Comedy,romance
+user49,adventure,terminator genisys,244,False,Terminator Genisys adventure,95,Fantasy Adventure,adventure
+user49,adventure,dawn of the planet of the apes,177,True,Dawn of the Planet of the Apes adventure,94,Fantasy Adventure,adventure
+user49,adventure,bhakta kannappa,3134,False,Bhakta Kannappa adventure,106,Fantasy Adventure,adventure
+user49,adventure,commando,1757,False,Commando adventure,95,Fantasy Adventure,adventure
+user50,animation,cars 2,776,False,Cars 2 animation,74,Animated Comedy,animation
+user50,animation,toy story 3,689,True,Toy Story 3 animation,74,Animated Comedy,animation
+user50,sport,never back down,597,False,Never Back Down sport,26,General,sport
+user50,sport,warrior,195,False,Warrior sport,13,General,sport
+user50,sci-fi,ganapath,1084,False,Ganapath sci-fi,-1,Sci-Fi Action,sci-fi
+user50,sci-fi,krrish 4,1432,True,Krrish 4 sci-fi,92,Sci-Fi Action,sci-fi
+user51,action,pixels,387,False,Pixels action,86,Action Comedy,action
+user51,action,red dawn,873,False,Red Dawn action,87,Action Comedy,action
+user51,crime,bahut hua sammaan,2210,False,Bahut Hua Sammaan crime,3,Crime Drama,crime
+user51,crime,"lsd: love, sex aur dhokha",1852,True,"LSD: Love, Sex Aur Dhokha crime",3,Crime Drama,crime
+user51,western,django unchained,145,False,Django Unchained western,1,General,western
+user51,western,the ridiculous 6,643,False,The Ridiculous 6 western,9,General,western
+user52,drama,bhaiaji superhit,2985,False,Bhaiaji Superhit drama,100,Romantic Drama,drama
+user52,drama,agneepath,1588,False,Agneepath drama,111,Romantic Drama,drama
+user52,drama,paterson,208,True,Paterson drama,114,Romantic Drama,drama
+user52,drama,arzoo,2960,True,Arzoo drama,-1,Romantic Drama,drama
+user52,comedy,kuselan,2680,True,Kuselan comedy,90,Romantic Comedy,comedy
+user52,comedy,the zoya factor,2518,True,The Zoya Factor comedy,90,Romantic Comedy,comedy
+user53,fantasy,gandharva jr.,1793,True,Gandharva jr. fantasy,110,Fantasy Adventure,fantasy
+user53,fantasy,jaani dushman: ek anokhi kahani,2136,True,Jaani Dushman: Ek Anokhi Kahani fantasy,-1,Fantasy Adventure,fantasy
+user53,thriller,tadapti jawani,3114,True,Tadapti Jawani thriller,68,Action Thriller,thriller
+user53,thriller,the counselor,522,True,The Counselor thriller,43,Action Thriller,thriller
+user53,adventure,rock dog,243,False,Rock Dog adventure,95,Fantasy Adventure,adventure
+user53,adventure,the darjeeling limited,1022,True,The Darjeeling Limited adventure,108,Fantasy Adventure,adventure
+user54,sport,chandu champion,1317,True,Chandu Champion sport,12,General,sport
+user54,sport,mukkabaaz,1600,False,Mukkabaaz sport,14,General,sport
+user54,biography,shootout at wadala,1627,False,Shootout at Wadala biography,-1,Biographical Drama,biography
+user54,biography,tiger nageswara rao,2035,False,Tiger Nageswara Rao biography,52,Biographical Drama,biography
+user54,mystery,the hateful eight,89,True,The Hateful Eight mystery,36,Mystery Thriller,mystery
+user54,mystery,jack reacher,537,True,Jack Reacher mystery,36,Mystery Thriller,mystery
+user55,comedy,total dhamaal,2493,False,Total Dhamaal comedy,80,Romantic Comedy,comedy
+user55,comedy,nehlle pe dehlla,2695,False,Nehlle Pe Dehlla comedy,69,Romantic Comedy,comedy
+user55,action,prahaar: the final attack,2226,True,Prahaar: The Final Attack action,66,Action Comedy,action
+user55,action,sampoorna ramayana,2742,True,Sampoorna Ramayana action,-1,Action Comedy,action
+user55,sport,warrior,195,False,Warrior sport,13,General,sport
+user55,sport,american wrestler: the wizard,368,True,American Wrestler: The Wizard sport,2,General,sport
+user56,action,how to train your dragon,773,True,How to Train Your Dragon action,-1,Action Comedy,action
+user56,action,in time,324,False,In Time action,86,Action Comedy,action
+user56,sport,the blind side,311,True,The Blind Side sport,5,General,sport
+user56,sport,42,850,False,42 sport,24,General,sport
+user56,war,tubelight,1386,False,Tubelight war,6,War Drama,war
+user56,war,haqeeqat,2893,False,Haqeeqat war,27,War Drama,war
+user57,action,assassin's creed,30,False,Assassin's Creed action,87,Action Comedy,action
+user57,action,raid,1259,True,Raid action,86,Action Comedy,action
+user57,music,begin again,852,True,Begin Again music,55,Music Drama,music
+user57,music,youth,504,True,Youth music,-1,Music Drama,music
+user57,romance,tu jhoothi main makkaar,1035,False,Tu Jhoothi Main Makkaar romance,23,Romantic Comedy,romance
+user57,romance,humshakals,2225,False,Humshakals romance,23,Romantic Comedy,romance
+user58,family,the karate kid,725,True,The Karate Kid family,29,Family Fantasy,family
+user58,family,harry potter and the order of the phoenix,315,True,Harry Potter and the Order of the Phoenix family,29,Family Fantasy,family
+user58,sci-fi,rupture,230,True,Rupture sci-fi,83,Sci-Fi Action,sci-fi
+user58,sci-fi,the hunger games: mockingjay - part 2,409,True,The Hunger Games: Mockingjay - Part 2 sci-fi,82,Sci-Fi Action,sci-fi
+user58,biography,rakhta charitra,2906,False,Rakhta Charitra biography,52,Biographical Drama,biography
+user58,biography,omerta,1198,True,Omerta biography,49,Biographical Drama,biography
+user59,drama,oonche log,3166,False,Oonche Log drama,-1,Romantic Drama,drama
+user59,drama,dhadkan,2577,True,Dhadkan drama,115,Romantic Drama,drama
+user59,horror,murder mubarak,2145,True,Murder Mubarak horror,61,Horror Comedy,horror
+user59,horror,shaapit: the cursed,2558,True,Shaapit: The Cursed horror,54,Horror Comedy,horror
+user59,action,dawn of the planet of the apes,177,True,Dawn of the Planet of the Apes action,-1,Action Comedy,action
+user59,action,shootout at wadala,1627,True,Shootout at Wadala action,66,Action Comedy,action
+user60,action,ramayana: the epic,2384,False,Ramayana: The Epic action,39,Action Comedy,action
+user60,action,suraj,2369,True,Suraj action,84,Action Comedy,action
+user60,action,caravan,2832,False,Caravan action,87,Action Comedy,action
+user60,action,baasha,1887,False,Baasha action,85,Action Comedy,action
+user60,adventure,l'odyssée,967,False,L'odyssée adventure,95,Fantasy Adventure,adventure
+user60,adventure,guardians of the galaxy,1,True,Guardians of the Galaxy adventure,94,Fantasy Adventure,adventure
+user61,romance,main tera hero,1403,False,Main Tera Hero romance,23,Romantic Comedy,romance
+user61,romance,preetam,2104,True,Preetam romance,23,Romantic Comedy,romance
+user61,animation,wall·e,635,False,WALL·E animation,74,Animated Comedy,animation
+user61,animation,koe no katachi,862,False,Koe no katachi animation,74,Animated Comedy,animation
+user61,war,billy lynn's long halftime walk,187,False,Billy Lynn's Long Halftime Walk war,10,War Drama,war
+user61,war,mine,161,True,Mine war,32,War Drama,war
+user62,mystery,solace,652,False,Solace mystery,36,Mystery Thriller,mystery
+user62,mystery,closed circuit,710,False,Closed Circuit mystery,36,Mystery Thriller,mystery
+user62,history,argo,475,True,Argo history,51,General,history
+user62,history,the founder,44,True,The Founder history,57,General,history
+user62,family,the last airbender,582,False,The Last Airbender family,29,Family Fantasy,family
+user62,family,the karate kid,725,True,The Karate Kid family,29,Family Fantasy,family
+user63,comedy,an action hero,1115,True,An Action Hero comedy,103,Action Comedy,comedy
+user63,comedy,go goa gone 2,3169,False,Go Goa Gone 2 comedy,89,Romantic Comedy,comedy
+user63,drama,yaar gaddar,2206,False,Yaar Gaddar drama,115,Romantic Drama,drama
+user63,drama,om shanti om,1054,False,Om Shanti Om drama,112,Romantic Drama,drama
+user63,biography,manto,1511,True,Manto biography,62,Biographical Drama,biography
+user63,biography,captain phillips,786,True,Captain Phillips biography,62,Biographical Drama,biography
+user64,drama,angithee,1946,True,Angithee drama,113,Romantic Drama,drama
+user64,drama,#home,1555,False,#Home drama,111,Romantic Drama,drama
+user64,family,neymar,1528,True,Neymar family,29,Family Fantasy,family
+user64,family,the blue umbrella,1966,True,The Blue Umbrella family,29,Family Fantasy,family
+user64,sci-fi,weapon,2891,False,Weapon sci-fi,83,Sci-Fi Action,sci-fi
+user64,sci-fi,love nation,2981,False,Love Nation sci-fi,83,Sci-Fi Action,sci-fi
+user65,family,jalpari: the desert mermaid,1219,True,Jalpari: The Desert Mermaid family,29,Family Fantasy,family
+user65,family,khan kluay,1881,True,Khan kluay family,29,Family Fantasy,family
+user65,horror,the host,633,False,The Host horror,44,Horror Comedy,horror
+user65,horror,goksung,916,True,Goksung horror,61,Horror Comedy,horror
+user65,romance,ek main aur ekk tu,1971,False,Ek Main Aur Ekk Tu romance,23,Romantic Comedy,romance
+user65,romance,the lunchbox,1081,False,The Lunchbox romance,23,Romantic Comedy,romance
+user66,action,ramayana: the legend of prince rama,1349,False,Ramayana: The Legend of Prince Rama action,38,Action Comedy,action
+user66,action,return of hanuman,2701,True,Return of Hanuman action,39,Action Comedy,action
+user66,sci-fi,the huntress,2597,False,The Huntress sci-fi,83,Sci-Fi Action,sci-fi
+user66,sci-fi,krrish 4,1432,False,Krrish 4 sci-fi,92,Sci-Fi Action,sci-fi
+user66,,untitled ranveer singh & shankar film,3177,True,Untitled Ranveer Singh & Shankar Film ,-1,General,
+user66,,khichdi 2,2596,False,Khichdi 2 ,92,General,
+user67,romance,pitch perfect,292,False,Pitch Perfect romance,23,Romantic Comedy,romance
+user67,romance,blended,340,True,Blended romance,23,Romantic Comedy,romance
+user67,action,return of hanuman,2701,False,Return of Hanuman action,35,Action Comedy,action
+user67,action,kochadaiiyaan,2113,False,Kochadaiiyaan action,85,Action Comedy,action
+user67,crime,monsoon shootout,1726,True,Monsoon Shootout crime,3,Crime Drama,crime
+user67,crime,gangubai kathiawadi,1049,False,Gangubai Kathiawadi crime,3,Crime Drama,crime
+user68,family,thoda pyaar thoda magic,2709,False,Thoda Pyaar Thoda Magic family,29,Family Fantasy,family
+user68,family,laaga chunari mein daag: journey of a woman,1989,True,Laaga Chunari Mein Daag: Journey of a Woman family,23,Family Fantasy,family
+user68,comedy,mrs undercover,1391,False,Mrs Undercover comedy,98,Romantic Comedy,comedy
+user68,comedy,lakadbaggha,1875,False,Lakadbaggha comedy,90,Romantic Comedy,comedy
+user68,thriller,i am the pretty thing that lives in the house,912,True,I Am the Pretty Thing That Lives in the House thriller,43,Action Thriller,thriller
+user68,thriller,shadyantra,2744,False,Shadyantra thriller,59,Action Thriller,thriller
+user69,history,frantz,644,False,Frantz history,57,General,history
+user69,history,woman in gold,168,True,Woman in Gold history,64,General,history
+user69,romance,humraaz,1836,False,Humraaz romance,23,Romantic Comedy,romance
+user69,romance,australia,704,True,Australia romance,23,Romantic Comedy,romance
+user69,comedy,muthu,1984,True,Muthu comedy,90,Romantic Comedy,comedy
+user69,comedy,khiladi 786,1775,True,Khiladi 786 comedy,90,Romantic Comedy,comedy
+user70,horror,wrong way,3146,True,Wrong Way horror,44,Horror Comedy,horror
+user70,horror,yoga hosers,801,True,Yoga Hosers horror,60,Horror Comedy,horror
+user70,romance,one night stand,2278,False,One Night Stand romance,23,Romantic Comedy,romance
+user70,romance,prem rog,2313,False,Prem Rog romance,23,Romantic Comedy,romance
+user70,history,argo,475,True,Argo history,51,General,history
+user70,history,lincoln,334,False,Lincoln history,57,General,history
+user71,mystery,andhadhun,1042,True,Andhadhun mystery,36,Mystery Thriller,mystery
+user71,mystery,krishna cottage,2212,False,Krishna Cottage mystery,36,Mystery Thriller,mystery
+user71,romance,the loft,836,False,The Loft romance,23,Romantic Comedy,romance
+user71,romance,the spectacular now,808,False,The Spectacular Now romance,23,Romantic Comedy,romance
+user71,,awara pagal deewana 2,2129,False,Awara Pagal Deewana 2 ,45,General,
+user71,,chuhiya,3099,True,Chuhiya ,36,General,
+user72,,the ladykiller,2802,False,The Ladykiller ,98,General,
+user72,,welcome to the jungle,1100,True,Welcome to the Jungle ,-1,General,
+user72,thriller,naam shabana,1614,True,Naam Shabana thriller,68,Action Thriller,thriller
+user72,thriller,merry christmas,1202,False,Merry Christmas thriller,53,Action Thriller,thriller
+user72,crime,ravan raaj: a true story,3150,False,Ravan Raaj: A True Story crime,52,Crime Drama,crime
+user72,crime,gumrah,2288,False,Gumrah crime,3,Crime Drama,crime
+user73,crime,tridev,2621,False,Tridev crime,3,Crime Drama,crime
+user73,crime,welcome,1401,False,Welcome crime,3,Crime Drama,crime
+user73,horror,murder mubarak,2145,False,Murder Mubarak horror,61,Horror Comedy,horror
+user73,horror,1920: evil returns,1781,True,1920: Evil Returns horror,44,Horror Comedy,horror
+user73,music,youth,504,True,Youth music,56,Music Drama,music
+user73,music,footloose,931,True,Footloose music,42,Music Drama,music
+user74,sport,unbroken,587,True,Unbroken sport,31,General,sport
+user74,sport,queen of katwe,975,False,Queen of Katwe sport,12,General,sport
+user74,war,billy lynn's long halftime walk,187,True,Billy Lynn's Long Halftime Walk war,-1,War Drama,war
+user74,war,inglourious basterds,78,True,Inglourious Basterds war,33,War Drama,war
+user74,fantasy,the great wall,6,True,The Great Wall fantasy,109,Fantasy Adventure,fantasy
+user74,fantasy,the twilight saga: eclipse,942,True,The Twilight Saga: Eclipse fantasy,77,Fantasy Adventure,fantasy
+user75,drama,miracles from heaven,981,False,Miracles from Heaven drama,113,Romantic Drama,drama
+user75,drama,shut in,827,True,Shut In drama,111,Romantic Drama,drama
+user75,crime,aksar 2,1818,True,Aksar 2 crime,3,Crime Drama,crime
+user75,crime,section 375,1217,False,Section 375 crime,3,Crime Drama,crime
+user75,sport,800,1685,False,800 sport,24,General,sport
+user75,sport,freaky ali,2507,True,Freaky Ali sport,2,General,sport
+user76,fantasy,percy jackson: sea of monsters,750,False,Percy Jackson: Sea of Monsters fantasy,77,Fantasy Adventure,fantasy
+user76,fantasy,fantastic beasts and where to find them,11,True,Fantastic Beasts and Where to Find Them fantasy,88,Fantasy Adventure,fantasy
+user76,drama,inside man,816,True,Inside Man drama,111,Romantic Drama,drama
+user76,drama,ishq-e-nadaan,1472,True,Ishq-e-nadaan drama,115,Romantic Drama,drama
+user76,action,bhoot and friends,2389,False,Bhoot and Friends action,87,Action Comedy,action
+user76,action,ramayana: the legend of prince rama,1349,False,Ramayana: The Legend of Prince Rama action,38,Action Comedy,action
+user77,horror,horns,866,False,Horns horror,44,Horror Comedy,horror
+user77,horror,lights out,259,False,Lights Out horror,44,Horror Comedy,horror
+user77,war,haqeeqat,2893,False,Haqeeqat war,27,War Drama,war
+user77,war,tubelight,1386,False,Tubelight war,6,War Drama,war
+user77,adventure,mission: impossible - ghost protocol,434,False,Mission: Impossible - Ghost Protocol adventure,-1,Fantasy Adventure,adventure
+user77,adventure,true grit,744,True,True Grit adventure,0,Fantasy Adventure,adventure
+user78,fantasy,paheli,1484,True,Paheli fantasy,110,Fantasy Adventure,fantasy
+user78,fantasy,bhoothnath returns,2715,False,Bhoothnath Returns fantasy,-1,Fantasy Adventure,fantasy
+user78,sport,freaky ali,2507,True,Freaky Ali sport,2,General,sport
+user78,sport,m.s. dhoni: the untold story,1321,False,M.S. Dhoni: The Untold Story sport,15,General,sport
+user78,horror,megan is missing,634,False,Megan Is Missing horror,44,Horror Comedy,horror
+user78,horror,the visit,319,False,The Visit horror,44,Horror Comedy,horror
+user79,romance,dil maange more!!!,3141,True,Dil Maange More!!! romance,23,Romantic Comedy,romance
+user79,romance,monsoon wedding,1179,True,Monsoon Wedding romance,23,Romantic Comedy,romance
+user79,war,fury,241,False,Fury war,20,War Drama,war
+user79,war,mine,161,False,Mine war,32,War Drama,war
+user79,horror,don't breathe,57,True,Don't Breathe horror,44,Horror Comedy,horror
+user79,horror,morgan,194,True,Morgan horror,44,Horror Comedy,horror
+user80,sport,american wrestler: the wizard,368,True,American Wrestler: The Wizard sport,2,General,sport
+user80,sport,the blind side,311,False,The Blind Side sport,5,General,sport
+user80,comedy,khushi,1800,True,Khushi comedy,90,Romantic Comedy,comedy
+user80,comedy,mrs undercover,1391,True,Mrs Undercover comedy,98,Romantic Comedy,comedy
+user80,mystery,the bourne ultimatum,428,False,The Bourne Ultimatum mystery,-1,Mystery Thriller,mystery
+user80,mystery,the ghost writer,541,True,The Ghost Writer mystery,36,Mystery Thriller,mystery
+user81,war,har har mahadev,1924,True,Har Har Mahadev war,27,War Drama,war
+user81,war,tubelight,1386,False,Tubelight war,7,War Drama,war
+user81,family,super nani,2458,True,Super Nani family,29,Family Fantasy,family
+user81,family,oonche log,3166,False,Oonche Log family,29,Family Fantasy,family
+user81,sci-fi,in time,324,False,In Time sci-fi,83,Sci-Fi Action,sci-fi
+user81,sci-fi,sleight,371,False,Sleight sci-fi,83,Sci-Fi Action,sci-fi
+user82,mystery,missing,3161,True,Missing mystery,36,Mystery Thriller,mystery
+user82,mystery,golmaal 5,3172,False,Golmaal 5 mystery,36,Mystery Thriller,mystery
+user82,history,spotlight,193,True,Spotlight history,21,General,history
+user82,history,argo,475,False,Argo history,51,General,history
+user82,sci-fi,krrish,1304,False,Krrish sci-fi,83,Sci-Fi Action,sci-fi
+user82,sci-fi,cargo,2590,True,Cargo sci-fi,75,Sci-Fi Action,sci-fi
+user83,adventure,oblivion,276,False,Oblivion adventure,95,Fantasy Adventure,adventure
+user83,adventure,sherlock holmes,282,True,Sherlock Holmes adventure,95,Fantasy Adventure,adventure
+user83,sci-fi,arrival,20,True,Arrival sci-fi,83,Sci-Fi Action,sci-fi
+user83,sci-fi,i origins,698,True,I Origins sci-fi,83,Sci-Fi Action,sci-fi
+user83,comedy,bride & prejudice,1087,False,Bride & Prejudice comedy,-1,Romantic Comedy,comedy
+user83,comedy,moana,14,False,Moana comedy,103,Romantic Comedy,comedy
+user84,drama,true crimes,539,False,True Crimes drama,71,Romantic Drama,drama
+user84,drama,elysium,527,False,Elysium drama,113,Romantic Drama,drama
+user84,biography,the pursuit of happyness,641,True,The Pursuit of Happyness biography,-1,Biographical Drama,biography
+user84,biography,woman in gold,168,False,Woman in Gold biography,64,Biographical Drama,biography
+user84,music,aashiqui 2,1293,False,Aashiqui 2 music,41,Music Drama,music
+user84,music,daag: a poem of love,2172,True,Daag: A Poem of Love music,28,Music Drama,music
+user85,war,welcome to karachi,2441,True,Welcome to Karachi war,16,War Drama,war
+user85,war,mausam,1801,False,Mausam war,17,War Drama,war
+user85,animation,ice age: collision course,297,True,Ice Age: Collision Course animation,74,Animated Comedy,animation
+user85,animation,tangled,408,True,Tangled animation,74,Animated Comedy,animation
+user85,fantasy,avatar,88,False,Avatar fantasy,-1,Fantasy Adventure,fantasy
+user85,fantasy,thor,102,False,Thor fantasy,110,Fantasy Adventure,fantasy
+user86,music,gully boy,1154,False,Gully Boy music,56,Music Drama,music
+user86,music,aaja nachle,3018,False,Aaja Nachle music,41,Music Drama,music
+user86,war,rambo,895,False,Rambo war,17,War Drama,war
+user86,war,fury,241,False,Fury war,20,War Drama,war
+user86,romance,preetam,2104,True,Preetam romance,23,Romantic Comedy,romance
+user86,romance,m.... matric pass,3070,False,M.... Matric Pass romance,23,Romantic Comedy,romance
+user87,sport,the blind side,311,True,The Blind Side sport,5,General,sport
+user87,sport,love-all,1648,True,Love-All sport,26,General,sport
+user87,musical,yaadein...,2008,False,Yaadein... musical,46,General,musical
+user87,musical,madhoshi,1655,True,Madhoshi musical,47,General,musical
+user87,sport,patiala house,1870,True,Patiala House sport,12,General,sport
+user87,sport,jhund,1712,True,Jhund sport,13,General,sport
+user88,romance,kareeb,2866,True,Kareeb romance,23,Romantic Comedy,romance
+user88,romance,barsaat,2207,False,Barsaat romance,23,Romantic Comedy,romance
+user88,western,django unchained,145,True,Django Unchained western,1,General,western
+user88,western,the ridiculous 6,643,False,The Ridiculous 6 western,4,General,western
+user88,crime,maarrich,2098,False,Maarrich crime,3,Crime Drama,crime
+user88,crime,escape plan,677,False,Escape Plan crime,3,Crime Drama,crime
+user89,crime,ocean's thirteen,908,True,Ocean's Thirteen crime,3,Crime Drama,crime
+user89,crime,chappie,518,False,Chappie crime,3,Crime Drama,crime
+user89,war,mughal-e-azam,1742,False,Mughal-E-Azam war,18,War Drama,war
+user89,war,chintu ka birthday,2629,False,Chintu Ka Birthday war,19,War Drama,war
+user89,adventure,brave,590,False,Brave adventure,95,Fantasy Adventure,adventure
+user89,adventure,angry birds,485,False,Angry Birds adventure,95,Fantasy Adventure,adventure
+user90,comedy,sharmaji namkeen,1507,True,Sharmaji Namkeen comedy,90,Romantic Comedy,comedy
+user90,comedy,hum do hamare do,1433,False,Hum Do Hamare Do comedy,69,Romantic Comedy,comedy
+user90,drama,ugly,1208,True,Ugly drama,111,Romantic Drama,drama
+user90,drama,oye lucky! lucky oye!,2246,True,Oye Lucky! Lucky Oye! drama,112,Romantic Drama,drama
+user90,sport,jhund,1712,False,Jhund sport,13,General,sport
+user90,sport,brothers,1737,True,Brothers sport,30,General,sport
+user91,family,saathiya,2196,True,Saathiya family,29,Family Fantasy,family
+user91,family,shubh nikah,3078,True,Shubh Nikah family,29,Family Fantasy,family
+user91,thriller,amir garib,2465,True,Amir Garib thriller,68,Action Thriller,thriller
+user91,thriller,tahalka,2460,False,Tahalka thriller,68,Action Thriller,thriller
+user91,mystery,regression,667,True,Regression mystery,36,Mystery Thriller,mystery
+user91,mystery,let me in,596,False,Let Me In mystery,36,Mystery Thriller,mystery
+user92,music,abcd (any body can dance),2915,False,ABCD (Any Body Can Dance) music,56,Music Drama,music
+user92,music,rab ne bana di jodi,1209,True,Rab Ne Bana Di Jodi music,41,Music Drama,music
+user92,sci-fi,krrish 4,1432,True,Krrish 4 sci-fi,91,Sci-Fi Action,sci-fi
+user92,sci-fi,prince,1977,False,Prince sci-fi,83,Sci-Fi Action,sci-fi
+user92,crime,raid,1259,True,Raid crime,3,Crime Drama,crime
+user92,crime,ludo,1127,False,Ludo crime,3,Crime Drama,crime
+user93,biography,rakhta charitra,2906,False,Rakhta Charitra biography,52,Biographical Drama,biography
+user93,biography,omerta,1198,False,Omerta biography,49,Biographical Drama,biography
+user93,war,kshatriya,2689,False,Kshatriya war,16,War Drama,war
+user93,war,har har mahadev,1924,True,Har Har Mahadev war,27,War Drama,war
+user93,drama,lakshya,1514,False,Lakshya drama,-1,Romantic Drama,drama
+user93,drama,jewel thief,1338,False,Jewel Thief drama,71,Romantic Drama,drama
+user94,sport,kai po che!,1343,False,Kai po che! sport,14,General,sport
+user94,sport,azhar,2020,True,Azhar sport,2,General,sport
+user94,action,chhota bheem aur krishna: mayanagari,2118,True,Chhota Bheem aur Krishna: Mayanagari action,65,Action Comedy,action
+user94,action,return of hanuman,2701,False,Return of Hanuman action,35,Action Comedy,action
+user94,fantasy,gandharva jr.,1793,True,Gandharva jr. fantasy,110,Fantasy Adventure,fantasy
+user94,fantasy,sakthi,2666,True,Sakthi fantasy,99,Fantasy Adventure,fantasy
+user95,musical,saajan,2522,True,Saajan musical,47,General,musical
+user95,musical,haqeeqat,2893,True,Haqeeqat musical,40,General,musical
+user95,adventure,pompeii,694,True,Pompeii adventure,93,Fantasy Adventure,adventure
+user95,adventure,india lockdown,1406,False,India Lockdown adventure,108,Fantasy Adventure,adventure
+user95,crime,junko,2622,True,Junko crime,3,Crime Drama,crime
+user95,crime,red,703,False,RED crime,3,Crime Drama,crime
+user96,animation,chhota bheem aur krishna: mayanagari,2118,False,Chhota Bheem aur Krishna: Mayanagari animation,73,Animated Comedy,animation
+user96,animation,how to train your dragon,773,False,How to Train Your Dragon animation,-1,Animated Comedy,animation
+user96,drama,chor nikal ke bhaga,1048,True,Chor Nikal Ke Bhaga drama,-1,Romantic Drama,drama
+user96,drama,mangal pandey: the rising,2385,False,Mangal Pandey: The Rising drama,72,Romantic Drama,drama
+user96,history,patriots day,67,False,Patriots Day history,58,General,history
+user96,history,hidden figures,12,True,Hidden Figures history,22,General,history
+user97,biography,sully,60,False,Sully biography,97,Biographical Drama,biography
+user97,biography,the lost city of z,9,True,The Lost City of Z biography,-1,Biographical Drama,biography
+user97,drama,khaidi no. 150,2051,False,Khaidi No. 150 drama,100,Romantic Drama,drama
+user97,drama,chup chup ke,1491,False,Chup Chup Ke drama,-1,Romantic Drama,drama
+user97,,spirit,2138,True,Spirit ,105,General,
+user97,,khichdi 2,2596,False,Khichdi 2 ,92,General,
+user98,drama,kabir singh,1189,False,Kabir Singh drama,100,Romantic Drama,drama
+user98,drama,mission kashmir,1445,False,Mission Kashmir drama,101,Romantic Drama,drama
+user98,musical,yeh dillagi,3105,True,Yeh Dillagi musical,47,General,musical
+user98,musical,saawariya,2308,True,Saawariya musical,47,General,musical
+user98,sport,freaky ali,2507,True,Freaky Ali sport,2,General,sport
+user98,sport,pailwaan,2151,False,Pailwaan sport,12,General,sport
+user99,musical,dillagi,3100,False,Dillagi musical,47,General,musical
+user99,musical,yeh jawaani hai deewani,1095,True,Yeh Jawaani Hai Deewani musical,34,General,musical
+user99,western,the lone ranger,970,False,The Lone Ranger western,0,General,western
+user99,western,brimstone,140,True,Brimstone western,8,General,western
+user99,action,suraj,2369,True,Suraj action,84,Action Comedy,action
+user99,action,prahaar: the final attack,2226,False,Prahaar: The Final Attack action,66,Action Comedy,action
+user100,mystery,the prestige,65,True,The Prestige mystery,36,Mystery Thriller,mystery
+user100,mystery,the ghost writer,541,True,The Ghost Writer mystery,36,Mystery Thriller,mystery
+user100,animation,the princess and the frog,844,True,The Princess and the Frog animation,74,Animated Comedy,animation
+user100,animation,wreck-it ralph,564,False,Wreck-It Ralph animation,74,Animated Comedy,animation
+user100,crime,jailer,1003,True,Jailer crime,3,Crime Drama,crime
+user100,crime,bholaa,1053,True,Bholaa crime,3,Crime Drama,crime

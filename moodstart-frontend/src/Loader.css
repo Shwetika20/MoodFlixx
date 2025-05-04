@@ -1,0 +1,17 @@
+.loader {
+  border: 10px solid #f3f3f3; /* Light gray border for the outer circle */
+  border-top: 10px solid #3498db; /* Blue color for the top section of the circle */
+  border-radius: 50%; /* Makes the loader circular */
+  width: 80px; /* Width of the loader */
+  height: 80px; /* Height of the loader */
+  animation: spin 1s linear infinite; /* Spinning animation */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); /* Starting rotation (0 degrees) */
+  }
+  100% {
+    transform: rotate(360deg); /* Ending rotation (360 degrees) */
+  }
+}
