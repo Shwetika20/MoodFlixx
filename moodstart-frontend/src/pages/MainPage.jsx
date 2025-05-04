@@ -94,7 +94,6 @@ const MainPage = () => {
     <Loader />
   </div>
 );
-
   }
 
   return (

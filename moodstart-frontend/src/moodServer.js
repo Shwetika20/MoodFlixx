@@ -157,17 +157,26 @@ app.post('/get-movie-description', async (req, res) => {
 
 
 // Existing routes
-
 app.get('/next-question', async (req, res) => {
+  // If the question count reaches MAX_QUESTIONS, return the end data
   if (currentQuestionCount >= MAX_QUESTIONS) {
     const probabilities = await generateProbabilities();
-    return res.json({ end: true, ...probabilities });
+    return res.json({ end: true, mood: probabilities.mood, genre: probabilities.genre });
   }
 
+  // Fetch the next question depending on the current question count
   const questionData = currentQuestionCount === 0 ? await getFirstOpenQuestion() : await getNextMCQQuestion();
+  
+  // Increment question count only after returning a question
   currentQuestionCount++;
-  res.json({ end: false, current: currentQuestionCount, ...questionData });
+
+  res.json({
+    end: false,
+    current: currentQuestionCount,
+    ...questionData
+  });
 });
+
 
 app.post('/answer', (req, res) => {
   const { answer } = req.body;

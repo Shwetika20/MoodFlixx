@@ -1,6 +1,8 @@
 import React from 'react';
 
 const MoodResult = ({ moodResult, movieDescription, movieStory }) => {
+  // Extract relevant mood information
+  const { Happy, Sad, Angry, Calm, Anxious, Excited } = moodResult || {};
 
   const onSaveToHistory = async (movie) => {
     const token = localStorage.getItem('authToken');
@@ -64,22 +66,36 @@ const MoodResult = ({ moodResult, movieDescription, movieStory }) => {
     }
   };
 
+  // Helper function to render a mood bar
+  const renderMoodBar = (mood, confidence) => (
+    <div className="flex items-center space-x-4">
+      <div className="w-1/3 text-lg font-semibold text-indigo-300">{mood}</div>
+      <div className="flex-1 bg-gray-700 rounded-full h-4">
+        <div
+          className="h-4 rounded-full"
+          style={{
+            width: `${confidence}%`,
+            backgroundColor: confidence > 50 ? '#4caf50' : '#ff5722',
+          }}
+        ></div>
+      </div>
+      <div className="w-16 text-center font-semibold text-pink-300">{confidence}%</div>
+    </div>
+  );
+
   return (
     <div className="w-full max-w-4xl bg-[#1f1b38] text-white rounded-2xl p-8 shadow-2xl">
       {/* Detected Mood */}
       <section className="mb-8">
         <h2 className="text-3xl font-extrabold mb-4 border-b border-pink-500 pb-2">🧠 Detected Mood</h2>
-        <pre className="bg-[#2d274b] p-4 rounded-lg overflow-x-auto text-sm text-pink-300">
-          {JSON.stringify(moodResult, null, 2)}
-        </pre>
-      </section>
-
-      {/* Movie Description */}
-      <section className="mb-8">
-        <h2 className="text-3xl font-extrabold mb-4 border-b border-yellow-400 pb-2">🎬 Movie Description</h2>
-        <p className="bg-[#3a315c] p-5 rounded-lg text-yellow-200 leading-relaxed">
-          {movieDescription}
-        </p>
+        <div className="space-y-6">
+          {Happy !== undefined && renderMoodBar('Happy', Happy)}
+          {Sad !== undefined && renderMoodBar('Sad', Sad)}
+          {Angry !== undefined && renderMoodBar('Angry', Angry)}
+          {Calm !== undefined && renderMoodBar('Calm', Calm)}
+          {Anxious !== undefined && renderMoodBar('Anxious', Anxious)}
+          {Excited !== undefined && renderMoodBar('Excited', Excited)}
+        </div>
       </section>
 
       {/* Movie Recommendations */}
