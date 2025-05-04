@@ -15,13 +15,21 @@ const QuestionSection = ({
 
     {/* Text Input Question */}
     {questionData.type === 'text' ? (
-      <form onSubmit={handleTextSubmit} className="flex flex-col md:flex-row items-center gap-4">
+      <form
+        onSubmit={handleTextSubmit}
+        className="flex flex-col md:flex-row items-center gap-4"
+      >
         <input
           type="text"
           value={userInput}
           onChange={(e) => setUserInput(e.target.value)}
           placeholder="Type your answer..."
           className="w-full md:flex-1 px-4 py-3 rounded-xl bg-[#2d254b] text-white border border-pink-400 focus:outline-none focus:ring-2 focus:ring-pink-500 transition duration-300"
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              handleTextSubmit(e);
+            }
+          }}
         />
         <button
           type="submit"

@@ -2,49 +2,35 @@ import React, { useState, useEffect } from 'react';
 import Loader from '../Loader.jsx';
 import QuestionSection from '../components/QuestionForm.jsx';
 import MoodResult from '../components/MoodResults.jsx';
+import NavBar from '../components/NavBar.jsx';
 
 const MainPage = () => {
-  const [questionData, setQuestionData] = useState({type: "text", question: "How are you feeling right now in your own words?"});
+  const [questionData, setQuestionData] = useState({
+    type: 'text',
+    question: 'How are you feeling right now in your own words?',
+  });
   const [userInput, setUserInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [moodResult, setMoodResult] = useState(null);
-  const [movieStory, setMovieStory] = useState(null);
-  const [movieDescription, setMovieDescription] = useState(null);
+  const [movieSummary, setMovieSummary] = useState(null);
+  const [recommendations, setRecommendations] = useState(null);
 
+  // Optional: Uncomment to auto-start session on load
   // useEffect(() => {
-  //   console.log("hello");
-  //   startSession();
+  //   onSubmitStartOver();
   // }, []);
 
-  // const startSession = async () => {
-  //   try {
-  //     await fetch('http://localhost:5001/reset', { method: 'POST' });
-  //     setMoodResult(null);
-  //     setMovieStory(null);
-  //     setMovieDescription(null);
-  //     const res = await fetch('http://localhost:5001/next-question');
-  //     const data = await res.json();
-  //     setQuestionData(data);
-  //     setUserInput('');
-  
-  //     // getNextQuestion();
-  //   } catch (error) {
-  //     console.error('Error resetting session:', error);
-  //   }
-  // };
-
-
-  const onsubmitfunction = async () => {
+  const onSubmitStartOver = async () => {
     try {
       await fetch('http://localhost:5001/reset', { method: 'POST' });
       setMoodResult(null);
-      setMovieStory(null);
-      setMovieDescription(null);
+      setMovieSummary(null);
+      setRecommendations(null);
       getNextQuestion();
     } catch (error) {
       console.error('Error resetting session:', error);
     }
-  }
+  };
 
   const getNextQuestion = async () => {
     setLoading(true);
@@ -54,10 +40,10 @@ const MainPage = () => {
       console.log(data);
       setQuestionData(data);
       setUserInput('');
+
       if (data.end && data.mood) {
         setMoodResult(data.mood);
-        fetchMovieStory(data.mood);
-        fetchMovieDescription(data.mood, data.genre);
+        fetchMovieDetails(data.mood, data.genre);
       }
     } catch (error) {
       console.error('Failed to fetch question:', error);
@@ -66,21 +52,7 @@ const MainPage = () => {
     }
   };
 
-  const fetchMovieStory = async (moodProbabilities) => {
-    try {
-      const res = await fetch('http://localhost:5001/get-movie-description', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ mood: moodProbabilities }),
-      });
-      const data = await res.json();
-      setMovieStory(data.story);
-    } catch (error) {
-      console.error('Failed to fetch movie story:', error);
-    }
-  };
-
-  const fetchMovieDescription = async (mood, genre) => {
+  const fetchMovieDetails = async (mood, genre) => {
     try {
       const res = await fetch('http://localhost:5001/get-movie-description', {
         method: 'POST',
@@ -88,11 +60,11 @@ const MainPage = () => {
         body: JSON.stringify({ mood, genre }),
       });
       const data = await res.json();
-      console.log(data.plot);
-      setMovieDescription(data.description);
-      setMovieStory(data.recommendations);
+      console.log(data);
+      setMovieSummary(data.description);
+      setRecommendations(data.recommendations);
     } catch (error) {
-      console.error('Failed to fetch movie description:', error);
+      console.error('Failed to fetch movie details:', error);
     }
   };
 
@@ -116,38 +88,48 @@ const MainPage = () => {
     }
   };
 
-  
   if (loading || !questionData) {
-    return <Loader />;
+    return (
+  <div className="min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white flex items-center justify-center">
+    <Loader />
+  </div>
+);
+
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white flex items-center justify-center px-4 py-10">
-      <div className="w-full max-w-4xl bg-[#1f1b38] rounded-2xl shadow-2xl p-8 md:p-12 flex flex-col items-center">
-        {moodResult ? (
-          <MoodResult
-            moodResult={moodResult}
-            movieStory={movieStory}
-            movieDescription={movieDescription}
-          />
-        ) : (
-          <QuestionSection
-            questionData={questionData}
-            userInput={userInput}
-            setUserInput={setUserInput}
-            handleTextSubmit={handleTextSubmit}
-            submitAnswer={submitAnswer}
-          />
-        )}
+    <div className="min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white">
+  <NavBar />
 
-        <button
-          onClick={onsubmitfunction}
-          className="mt-10 px-6 py-3 rounded-full bg-pink-600 text-white text-lg font-bold hover:bg-pink-500 transition duration-300 shadow-md"
-        >
-          🔁 Start Over
-        </button>
-      </div>
+  <div className="flex items-center justify-center px-4 py-10">
+    <div className="w-full max-w-4xl bg-[#1f1b38] rounded-2xl shadow-2xl p-8 md:p-12 flex flex-col items-center">
+      
+      {moodResult ? (
+        <MoodResult
+          moodResult={moodResult}
+          movieStory={recommendations}
+          movieDescription={movieSummary}
+        />
+      ) : (
+        <QuestionSection
+          questionData={questionData}
+          userInput={userInput}
+          setUserInput={setUserInput}
+          handleTextSubmit={handleTextSubmit}
+          submitAnswer={submitAnswer}
+        />
+      )}
+
+      <button
+        onClick={onSubmitStartOver}
+        className="mt-10 px-6 py-3 rounded-full bg-pink-600 text-white text-lg font-bold hover:bg-pink-500 transition duration-300 shadow-md"
+      >
+        🔁 Start Over
+      </button>
     </div>
+  </div>
+</div>
+
   );
 };
 

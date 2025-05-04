@@ -1,22 +1,21 @@
-import express from 'express';
 import jwt from 'jsonwebtoken';
+import User from '../models/userModel.js';
 
-const userAuth = async (req, res, next) => {
-    const {token} = req.cookies;
-    if (!token) {
-        return res.status(401).json({ success: false, message: 'Unauthorized: Login Again' });
-    }
-    try {
-        const tokenDecoded = jwt.verify(token, process.env.JWT_SECRET);
-        if (!tokenDecoded || !tokenDecoded.id) {
-            return res.status(401).json({ success: false, message: 'Not Authorized: Login Again' });
-        }
-        req.body.userId = tokenDecoded.id;
+const auth = async (req, res, next) => {
+  try {
+    const token = req.header('Authorization').replace('Bearer ', '');
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const user = await User.findById(decoded.id);
 
-        next(); 
-    } catch (error) {
-        return res.status(401).json({ success: false, message: error.message });
+    if (!user) {
+      return res.status(401).json({ message: 'User not found' });
     }
+
+    req.user = user;
+    next();
+  } catch (err) {
+    res.status(401).json({ message: 'Not authorized' });
+  }
 };
 
-export default userAuth;
+export default auth;

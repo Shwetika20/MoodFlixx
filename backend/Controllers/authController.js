@@ -3,7 +3,8 @@ import jwt from 'jsonwebtoken';
 import userModel from '../models/userModel.js';
 import transporter from '../config/nodemailer.js';
 import { text } from 'express';
-import { EMAIL_VERIFY_TEMPLATE,PASSWORD_RESET_TEMPLATE } from '../config/emailTemplate.js';
+import { EMAIL_VERIFY_TEMPLATE, PASSWORD_RESET_TEMPLATE } from '../config/emailTemplate.js';
+
 
 export const register = async (req, res) => {
   try {
@@ -98,98 +99,6 @@ export const logout = async (req, res) => {
             sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
         });
         return res.json({ success: true, message: 'Logged out' });
-    } catch (error) {
-        return res.json({ success: false, message: error.message });
-    }
-};
-//Send verification OTP to Users Email
-export const sendVerifyOtp = async (req, res) => {
-    try {
-        const { userId } = req.body;
-
-        const user = await userModel.findById(userId);
-        if (!user) {
-            return res.json({ success: false, message: 'User not found' });
-        }
-        if (user.isAccountVerified) {
-            return res.json({ success: false, message: 'Account already verified' });
-        }
-        const otp = String(Math.floor(100000 + Math.random() * 900000));
-        user.verifyOtp = otp;
-        user.verifyOtpExpireAt = Date.now() + 24 * 60 * 60 * 1000;
-        await user.save();
-        const mailOptions = {
-            from: process.env.SENDER_EMAIL,
-            to: user.email,
-            subject: 'Account Verification OTP',
-            //text: `Hello ${user.name} \n Your OTP for account verification is ${otp}`,
-            html: EMAIL_VERIFY_TEMPLATE.replace('{{email}}', user.email).replace('{{otp}}', otp),
-        };
-        await transporter.sendMail(mailOptions);
-        return res.json({ success: true, message: 'Verification OTP sent successfully' });
-    } catch (error) {
-        return res.json({ success: false, message: error.message });
-    }
-};
-//Verify Email with OTP
-export const VerifyEmail = async (req, res) => {
-    const { userId, otp } = req.body;
-    if (!userId) {
-        return res.json({ success: false, message: 'Missing User Id' });
-    }
-    if (!otp) {
-        return res.json({ success: false, message: 'Missing OTP' });
-    }
-    try {
-        const user = await userModel.findById(userId);
-        if (user.verifyOtp !== otp || user.verifyOtp === '') {
-            return res.json({ success: false, message: 'Invalid OTP' });
-        }
-        if (user.verifyOtpExpireAt < Date.now()) {
-            return res.json({ success: false, message: 'OTP Expired' });
-        }
-        user.isAccountVerified = true;
-        user.verifyOtp = '';
-        user.verifyOtpExpireAt = null;
-        await user.save();
-        return res.json({ success: true, message: 'Email Verified Successfully' });
-    } catch (error) {
-        return res.json({ success: false, message: error.message });
-    }
-};
-
-export const isAuthenticated = async (req, res) => {
-    try {
-        return res.json({success: true})
-    } catch (error) {
-        return res.json({ success: false, message: error.message });
-    }
-}
-
-export const SendResetOtp = async (req, res) => {
-    const { email } = req.body;
-    if (!email) {
-        return res.json({ success: false, message: 'Email is required' });
-    }
-    try {
-        const user = await userModel.findOne({email});
-        if (!user) {
-            return res.json({ success: false, message: 'User not found' });
-        }
-        const otp = String(Math.floor(100000 + Math.random() * 900000));
-        user.resetOtp = otp;
-        user.resetOtpExpireAt = Date.now()+ 24 * 60 * 60 * 1000;
-        await user.save();
-
-        const mailOptions = {
-            from: process.env.SENDER_EMAIL,
-            to: email,
-            subject: 'Password Reset Otp',
-            //text:`Your otp for reseting password is ${otp}`
-            html: PASSWORD_RESET_TEMPLATE.replace('{{email}}', email).replace('{{otp}}', otp),
-        }
-        await transporter.sendMail(mailOptions);
-        return res.json({success:true,message:'Reset Otp sent successfully'})
     } catch (error) {
         return res.json({ success: false, message: error.message });
     }

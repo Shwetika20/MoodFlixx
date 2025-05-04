@@ -7,6 +7,7 @@ import Signup from './pages/Signup';
 import Contact from './pages/Contact';
 import React from 'react';
 import MainPage2 from './pages/MainPage2';
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/profile" element={<Profile/>} />
     </Routes>
   );
 }

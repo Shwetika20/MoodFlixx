@@ -1,6 +1,3 @@
-import pkg from 'jsonwebtoken';  // Import the entire package
-const { verify } = pkg;
-
 import mongoose from "mongoose";
 
 // Define the schema for User
@@ -21,7 +18,15 @@ const userSchema = new mongoose.Schema({
   moviesHistory: {
     type: [
       {
-        movie_id: {
+        name: {
+          type: String,
+          required: true,
+        },
+        genre: {
+          type: String,
+          required: true,
+        },
+        overview: {
           type: String,
           required: true,
         },
@@ -31,10 +36,10 @@ const userSchema = new mongoose.Schema({
         },
       }
     ],
-    default: [] 
+    default: []
   }
 });
 
-const userModel = mongoose.models.user || mongoose.model('user', userSchema);
 
+const userModel = mongoose.models.user || mongoose.model('user', userSchema);
 export default userModel;
