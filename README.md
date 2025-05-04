@@ -31,7 +31,7 @@ MoodFlixx is an innovative AI-powered movie recommendation system that personali
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/MoodFlixx.git
-   cd MoodFlixx
+   cd MoodStart
    ```
 
 ### Backend Setup
