@@ -110,7 +110,7 @@ The MoodFlixx Chrome extension provides quick access to mood-based movie recomme
 - **One-Click Watchlist**: Add recommended movies to your watchlist with a single click
 
 
-## Vedio Link
+## Video Link
 https://drive.google.com/drive/folders/1zJg_mB0RFjSG8ljRiZutjTD5O6ZncGnM?usp=sharing
 
 ## 👥 Team Members
