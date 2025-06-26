@@ -111,7 +111,7 @@ The MoodFlixx Chrome extension provides quick access to mood-based movie recomme
 
 
 ## Project Details and Video
-https://drive.google.com/file/d/1Ng0JX5--obBE7AOPKqXXLLDCFFctwSsf/view?usp=drive_link
+https://drive.google.com/drive/folders/1SazCMTokKJmmY4ziNbLxyNhbDyxGvXQL?usp=sharing
 
 ## 👥 Team Members
 
